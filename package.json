@@ -1,0 +1,15 @@
+{
+  "name": "bootcamp-project-2023",
+  "version": "1.0.0",
+  "description": "This is how we will be tracking your milestones throughout bootcamp! By the end of bootcamp, you will have a fullstack personal portfolio website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.2.2"
+  }
+}
