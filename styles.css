@@ -1,0 +1,326 @@
+:root {
+  /* variables */
+  --cg-lightblue: #e0fbfc;
+  --cg-blue: #c2dfe3;
+  --cg-lightgray:#9db4c0;
+  --cg-grey: #5C6B73;
+  --cg-darkgray: #253237;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: var(--cg-blue);
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+}
+
+/* CSS for navigation */
+
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 7%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  background-color: var(--cg-darkgray);
+  color: var(--cg-blue);
+
+  /* border: solid red; */
+}
+
+.nav-list {
+  /* border: solid blue; */
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 30px;
+  list-style: none;
+}
+
+.navbar a {
+  color: var(--cg-lightblue);
+  font-weight: bold;
+  margin: 0 0;
+  text-decoration: none;
+  letter-spacing: 2px;
+
+  padding: 22.5px 12px;
+
+
+  font-family: monospace;
+}
+
+.navbar a:hover {
+  color: var(--cg-darkgray);
+  background-color: var(--cg-lightblue);
+  text-decoration: none;
+}
+
+.navbar a:active {
+  color: var(--cg-blue);
+}
+
+.logo a {
+  font-family: Georgia;
+}
+
+.logo a:hover {
+  padding: 0px 12px;
+  text-decoration: None;
+  color: var(--cg-lightblue);
+  background-color: var(--cg-darkgray);
+}
+
+main {
+  padding: 0 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--cg-darkgray);
+  font-size: larger;
+}
+
+.page-title {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-family: Georgia;
+}
+
+/* CSS for portfolio grid */
+
+.project {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  margin: 1em 0 2em 0;
+  text-align: justify;
+  justify-content: center;
+
+  /* border: 2px solid blue; */
+}
+
+.item-link {
+  width: 70%;
+
+  /* border: 2px solid red; */
+}
+
+.project-image {
+  object-fit: cover;
+  width: 100%;
+  height: 500px;
+  flex-basis: 50px;
+  flex-grow: 2;
+
+  /* border: 2px solid black; */
+}
+
+.project-details {
+  display: flex;
+  background-color: var(--cg-lightgray);
+  border-radius: 5px;
+  width: 30%;
+  height: 500px;
+  flex-shrink: 1;
+  padding: 0 20px;
+  margin: 0px;
+  line-height: 1.5;
+  overflow: scroll;
+
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+
+  color: var(--cg-lightblue);
+
+  /* border: 2px solid green; */
+}
+
+.project-details a {
+  color: var(--cg-grey);
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.project-details a:hover {
+  color: var(--cg-lightblue);
+  text-decoration: underline;
+}
+
+.project-details {
+  font-weight: lighter;
+}
+
+.project-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* CSS for home page */
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--cg-lightgray);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color:var(--cg-lightblue)
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.about-image img {
+  max-width: 300px;
+  border-radius: 3px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+}
+
+.about-text {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.about-text h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* CSS for resume page */
+
+.resume h2 {
+  font-family: Georgia;
+  color: var(--cg-darkgray)
+}
+
+.resume {
+  color: var(--cg-grey);
+}
+
+/* CSS for contact form */
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: Georgia;
+  font-weight: bold;
+  color: var(--cg-grey)
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+
+input[type="submit"]{
+      background: var(--cg-darkgray);
+      border-style: outset;
+      border-color: var(--cg-lightgray);
+      height: 50px;
+      width: 100px;
+      font-family: Georgia;
+      font-weight: bold;
+      color:var(--cg-lightblue);
+      text-shadow: none;
+      border-radius: 10px;
+  }
+
+  input[type="submit"]:hover{
+      color: var(--cg-darkgray);
+      background:var(--cg-lightblue);
+  }
+
+
+/* Add some spacing to the form */
+form {
+  width: 500px;
+  margin: 0 auto;
+}
+
+  /*CSS for blog*/
+
+  .blogpost div{
+      margin: 15px 15px;
+      color:var(--cg-lightblue);
+      background-color: var(--cg-lightgray);
+      width: 400px;
+      padding: 10px 25px;
+      border-radius: 5px;
+      text-align: center;
+  }
+
+  .blogpost a {
+    color: var(--cg-grey);
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .blogpost a:hover {
+    color: var(--cg-lightblue);
+    text-decoration: underline;
+  }
+
+  .blog-body{
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .blog-title , .blog-date{
+    color:var(--cg-darkgray);
+    text-align: center;
+  }
+
+  .blog-text {
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--cg-lightgray);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color:var(--cg-lightblue);
+    line-height: 25px;
+    font-size: 18px;
+  }
+
+/* CSS for footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cg-darkgray);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
