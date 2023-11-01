@@ -1,0 +1,55 @@
+.page_title {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-family: Georgia;
+}
+
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #9db4c0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color:#e0fbfc
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.about_image Image {
+  max-width: 300px;
+  border-radius: 3px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+}
+
+.about_text {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.about_text h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about_text p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cg-darkgray);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+
+
