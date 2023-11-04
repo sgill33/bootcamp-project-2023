@@ -1,0 +1,14 @@
+  /* CSS for footer */
+  
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cg-darkgray);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+
+  }
