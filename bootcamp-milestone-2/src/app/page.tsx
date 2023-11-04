@@ -5,12 +5,11 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <div className={styles.home}>
-      <body>
           <main>
-              <h1 className='page-title'>Hello There!</h1>
-              <div className="about">
-                  <div className="about-image">
-                      <Image src={'/shawn.jpg'} width={300} height={300} alt={"An image of Shawn Gill"}></Image>
+              <h1 className={styles.page_title}>Hello There!</h1>
+              <div className={styles.about}>
+                  <div className={styles.about_image}>
+                      <Image src='/shawn.jpg' width={300} height={300} alt="An image of Shawn Gill"></Image>
                   </div>
                   <div className={styles.about_text}>
                       <p>
@@ -25,9 +24,7 @@ export default function Home() {
                       </p>
                   </div>
               </div>
-          </main>
-              <footer className="footer">&copy; 2023 Shawn's Personal Website | All Rights Reserved</footer>
-      </body>
+          </main> 
     </div>
   )
 }
