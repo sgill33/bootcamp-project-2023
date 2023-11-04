@@ -4,8 +4,7 @@ import "../globals.css";
 
 export default function Resume() {
   return (
-
-    <body>
+    <div className={style.resumebody}>
         <main>
             <h1 className={style.page_title}>Resume</h1>
             <div className = {style.resume}>
@@ -72,7 +71,6 @@ export default function Resume() {
                 </section>
             </div>
         </main>
-        <footer className={style.footer}>&copy; 2023 Shawn's Personal Website | All Rights Reserved</footer>
-    </body>
+    </div>
   );
 }
