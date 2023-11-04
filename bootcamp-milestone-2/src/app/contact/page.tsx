@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './home.module.css'
 
 
-export default function Home() {
+export default function Contact() {
   return (
     <main>
             <h1 className="page-title">Shawn's Contact</h1>
