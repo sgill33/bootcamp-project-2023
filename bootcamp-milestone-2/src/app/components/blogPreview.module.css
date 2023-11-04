@@ -1,0 +1,26 @@
+    /*CSS for blog*/
+  
+    .blogpost div{
+        margin: 15px 15px;
+        color:var(--cg-lightblue);
+        background-color: var(--cg-lightgray);
+        width: 550px;
+        padding: 10px 25px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+  
+    .blogpost a {
+      color: var(--cg-grey);
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    
+    .blogpost a:hover {
+      color: var(--cg-lightblue);
+      text-decoration: underline;
+    }
+
+  
