@@ -1,0 +1,25 @@
+.comment {
+    margin: 15px 15px;
+    color:var(--cg-lightblue);
+    background-color: var(--cg-grey);
+    width: 550px;
+    padding: 5px 25px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.user{
+    color: var(--cg-lightblue);
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.date{
+    color:var(--cg-lightgray);
+    margin: 0;
+    
+}
+
+.content{
+    color:white;
+}
