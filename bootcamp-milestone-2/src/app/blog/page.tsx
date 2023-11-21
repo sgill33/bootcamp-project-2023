@@ -1,17 +1,44 @@
 import React from "react";
 import BlogPreview from "../components/blogPreview";
-import blogs from "../static/blogData";
+import connectDB from "../helper/db";
+import blogSchema from "../database/blogSchema";
 
-export default function Blog() {
-  return (
-    // replace everything in between the <header> & <header /> tags
-    // with your navbar code from your earlier milestones
-    <main>
-        {blogs.map(
-          (blog) => (
-            <BlogPreview {...blog} />
-          ) // This is how we call the component
-        )}
-    </main>
-  );
+async function getBlogs() {
+  await connectDB();
+
+  try {
+    // query for all blogs and sort by date
+    const blogs = await blogSchema.find().sort({ date: -1 }).orFail();
+    // send a response as the blogs as the message
+    return blogs;
+  } catch (err) {
+    return null;
+  }
+}
+
+export default async function Blog() {
+  const blogPosts = await getBlogs();
+  if (blogPosts) {
+    return (
+      <main>
+        {blogPosts.map((blog) => (
+          <BlogPreview
+            title={blog.title}
+            slug={blog.slug}
+            date={blog.date}
+            description={blog.description}
+            content={blog.content}
+            comments={blog.content}
+            image={blog.image}
+          />
+        ))}
+      </main>
+    );
+  } else {
+    return (
+      <main>
+        <h1>No Blogs Found</h1>
+      </main>
+    );
+  }
 }
