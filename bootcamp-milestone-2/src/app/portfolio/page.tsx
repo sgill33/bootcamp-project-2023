@@ -1,5 +1,4 @@
 import React from "react";
-import projects from "../helper/projectData";
 import ProjectPreview from "../components/projectPreview";
 import connectDB from "../helper/db";
 import portfolioSchema from "../database/portfolioSchema";
