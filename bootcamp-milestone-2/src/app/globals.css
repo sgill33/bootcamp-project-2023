@@ -76,6 +76,7 @@
     }
 
   /* CSS for blog preview/pages */
+  
   .blog-body{
     align-items: center;
     justify-content: space-between;
@@ -95,15 +96,21 @@
   .blog-text {
     justify-content: space-between;
     padding: 20px;
-    background-color: var(--cg-lightgray);
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color:var(--cg-lightblue);
+    color:var(--cg-darkgray);
     line-height: 25px;
-    font-size: 18px;
+    font-size: 23px;
+    font-weight: 300;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   
-  
+  .comments {
+    text-align: center;
+    color:var(--cg-darkgray);
+    border : 2px solid;
+    border-color: var(--cg-grey);
+    border-radius: 4px;
+    
+  }
   /* Add some spacing to the form */
   form {
     width: 500px;
