@@ -1,4 +1,4 @@
 node_modules
 old_project
-*.json
 .DS_Store
+.env
