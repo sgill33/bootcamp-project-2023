@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "mongoose": "^8.0.0",
+    "next": "^14.0.4",
     "typescript": "^5.2.2"
   }
 }
