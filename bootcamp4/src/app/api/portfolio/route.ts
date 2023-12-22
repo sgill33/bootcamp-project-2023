@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import connectDB from "@/app/helper/db";
-import portfolioSchema from "@/app/database/portfolioSchema";
+import connectDB from "../../helper/db";
+import portfolioSchema from "../../database/portfolioSchema";
 
 
 

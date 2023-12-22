@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import connectDB from "@/app/helper/db";
-import  {IComment} from "@/app/database/blogSchema";
-import commentSchema from "@/app/database/commentSchema";
+import connectDB from "../../../helper/db";
+import { IComment } from "../../../database/blogSchema";
+import commentSchema from "../../../database/commentSchema";
 
 export async function POST(req: NextRequest) {
     await connectDB();

@@ -2,12 +2,8 @@
 import React, { useState } from "react";
 import ProjectPreview from "../components/projectPreview";
 import  {IPort} from "../database/portfolioSchema";
-import Comment from "@/app/components/comment";
-import { IComment } from "@/app/database/blogSchema";
-
-
-
-
+import Comment from "../components/comment";
+import { IComment } from "../database/blogSchema";
 
 export default async function Portfolio() {
   async function getProjects() {

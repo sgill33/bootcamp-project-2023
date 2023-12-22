@@ -1,7 +1,7 @@
 {
-  "name": "bootcamp-project-2023",
+  "name": "bootcamp",
   "version": "1.0.0",
-  "description": "This is how we will be tracking your milestones throughout bootcamp! By the end of bootcamp, you will have a fullstack personal portfolio website.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,8 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "mongoose": "^8.0.0",
-    "next": "^14.0.4",
-    "typescript": "^5.2.2"
+    "mongoose": "^8.0.3",
+    "typescript": "^5.3.3"
   }
 }

@@ -1,17 +1,24 @@
 'use client';
 import React, { useState } from "react";
 import Image from "next/image";
-import Comment from "@/app/components/comment";
-import { IComment,IBlog } from "@/app/database/blogSchema";
+import Comment from "../../components/comment";
+import { IComment,IBlog } from "../../database/blogSchema";
+import { usePathname } from 'next/navigation'
+import { NextPageContext,GetServerSideProps } from 'next'
+import { useRouter } from 'next/router';
+
 
 
 type Props = {
     params: {title:string}
 }
 
+export default async function Page({params:{title}}:Props) {
+  
 
-async function getBlog(title: string){
-    const res = await fetch(`api/blog/${title}`,
+
+  async function getBlog(title: string){
+    const res = await fetch(`http://localhost:3000/api/blog/${title}`,
     {
         cache:"no-store"
     })
@@ -22,10 +29,8 @@ async function getBlog(title: string){
 }
 
 
-export default async function Page({params:{title}}:Props) {
-    const [newBlog, setBlog] = useState<IBlog | null>(null);
+  const [newBlog, setBlog] = useState<IBlog | null>(null);
 	
-    
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         /*
         Handles form submission by clearing form and appending comment
@@ -34,24 +39,24 @@ export default async function Page({params:{title}}:Props) {
     
         try {
           //get form submission event
-          const formElement = e.target as HTMLFormElement;
+          const formElement =  e.target as HTMLFormElement;
     
-            // Access values directly from the form elements
-            const nameInput =
-              formElement.querySelector<HTMLInputElement>(
-                'input[name="name"]'
-              );
-            const descriptionText =
-              formElement.querySelector<HTMLTextAreaElement>(
-                'textarea[name="description"]'
-              );
-    
-            // Explicitly cast e.target to HTMLFormElement
-            const newComment: IComment = {
-              user: nameInput?.value || "",
-              comment: descriptionText?.value || "",
-              time: new Date(),
-            };
+          // Access values directly from the form elements
+          const nameInput = 
+            formElement.querySelector<HTMLInputElement>(
+              'input[name="name"]'
+            );
+          const descriptionText =
+            formElement.querySelector<HTMLTextAreaElement>(
+              'textarea[name="description"]'
+            );
+  
+          // Explicitly cast e.target to HTMLFormElement
+          const newComment: IComment = {
+            user: nameInput?.value || "",
+            comment: descriptionText?.value || "",
+            time: new Date(),
+          };
     
             //Add comment to db and update UI
             const response = await fetch(
@@ -62,12 +67,12 @@ export default async function Page({params:{title}}:Props) {
               });
     
             
-            //clear form data
-            if (nameInput) nameInput.value = "";
-            if (descriptionText) descriptionText.value = "";
+            // //clear form data
+            // if (nameInput) nameInput.value = "";
+            // if (descriptionText) descriptionText.value = "";
     
             if (response.status === 200)
-              await setBlog({
+              setBlog({
                 title: newBlog?.title || "",
                 slug: newBlog?.slug || "",
                 date: newBlog?.date || new Date(),

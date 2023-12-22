@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import connectDB from "@/app/helper/db";
-import blogSchema from "@/app/database/blogSchema";
+import connectDB from "../../../helper/db";
+import blogSchema from "../../../database/blogSchema";
 
 type IParams = {
   params: {
