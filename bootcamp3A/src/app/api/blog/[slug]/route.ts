@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/app/helper/db";
-import blogSchema from "../../../database/blogSchema";
+import blogSchema from "@/app/database/blogSchema";
 
 type IParams = {
   params: {
@@ -19,3 +19,5 @@ export async function GET(req: NextRequest, { params }: IParams) {
     return NextResponse.json("Blog not found.", { status: 404 });
   }
 }
+
+
