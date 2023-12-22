@@ -7,7 +7,7 @@ import { IComment } from "../database/blogSchema";
 
 export default async function Portfolio() {
   async function getProjects() {
-    const res = await fetch(`./api/portfolio`,
+    const res = await fetch(`https://shawns-site.vercel.app/api/portfolio`,
     {
       cache:"no-store"
     });
@@ -19,7 +19,7 @@ export default async function Portfolio() {
   }
 
   async function getComments() {
-    const res = await fetch(`./api/portfolio/comment`,
+    const res = await fetch(`https://shawns-site.vercel.app/api/portfolio/comment`,
       {
         method:'GET',
         cache:"no-store"
