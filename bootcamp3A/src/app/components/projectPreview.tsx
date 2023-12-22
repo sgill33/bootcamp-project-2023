@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./projectPreview.module.css";
 import Image from "next/image";
-import type { Project } from "../helper/projectData";
+
 import Link from "next/link";
 import { IPort } from "../database/portfolioSchema";
 
