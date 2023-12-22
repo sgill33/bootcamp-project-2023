@@ -68,6 +68,7 @@
         color:var(--cg-lightblue);
         text-shadow: none;
         border-radius: 10px;
+        margin-bottom: 15px;
     }
   
     input[type="submit"]:hover{
