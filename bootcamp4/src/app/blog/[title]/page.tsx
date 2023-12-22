@@ -18,7 +18,7 @@ export default async function Page({params:{title}}:Props) {
 
 
   async function getBlog(title: string){
-    const res = await fetch(`shawns-site.vercel.app/api/blog/${title}`,
+    const res = await fetch(`./api/blog/${title}`,
     {
         cache:"no-store"
     })
