@@ -1,14 +1,17 @@
-import React from "react";
+'use client';
+import React, { useState } from "react";
 import Image from "next/image";
 import Comment from "@/app/components/comment";
-import { IComment } from "@/app/database/blogSchema";
+import { IComment,IBlog } from "@/app/database/blogSchema";
+
 
 type Props = {
     params: {title:string}
 }
 
+
 async function getBlog(title: string){
-    const res = await fetch(`http://localhost:3000/api/blog/${title}`,
+    const res = await fetch(`api/blog/${title}`,
     {
         cache:"no-store"
     })
@@ -20,6 +23,68 @@ async function getBlog(title: string){
 
 
 export default async function Page({params:{title}}:Props) {
+    const [newBlog, setBlog] = useState<IBlog | null>(null);
+	
+    
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        /*
+        Handles form submission by clearing form and appending comment
+        */
+        e.preventDefault();
+    
+        try {
+          //get form submission event
+          const formElement = e.target as HTMLFormElement;
+    
+            // Access values directly from the form elements
+            const nameInput =
+              formElement.querySelector<HTMLInputElement>(
+                'input[name="name"]'
+              );
+            const descriptionText =
+              formElement.querySelector<HTMLTextAreaElement>(
+                'textarea[name="description"]'
+              );
+    
+            // Explicitly cast e.target to HTMLFormElement
+            const newComment: IComment = {
+              user: nameInput?.value || "",
+              comment: descriptionText?.value || "",
+              time: new Date(),
+            };
+    
+            //Add comment to db and update UI
+            const response = await fetch(
+              `/api/blog/${title}/comment`, {
+                method: "POST",
+                headers: { 'Content-Type': "application/json" },
+                body: JSON.stringify(newComment),
+              });
+    
+            
+            //clear form data
+            if (nameInput) nameInput.value = "";
+            if (descriptionText) descriptionText.value = "";
+    
+            if (response.status === 200)
+              await setBlog({
+                title: newBlog?.title || "",
+                slug: newBlog?.slug || "",
+                date: newBlog?.date || new Date(),
+                description: newBlog?.description || "",
+                content: newBlog?.content || "",
+                image: newBlog?.image || "",
+                comments: newBlog
+                  ? [...newBlog.comments, newComment]
+                  : [newComment],
+              });
+            window.location.reload();
+              
+        } catch (err) {
+          console.error(err);
+        }
+      }
+
     const blog = await getBlog(title)
     if (blog){
         return (
@@ -37,6 +102,17 @@ export default async function Page({params:{title}}:Props) {
                     {blog.comments?.map((comment : IComment, index: number) => (
                         <Comment {...comment}/>
                     ))}
+                </div>
+                <div>
+                    <form onSubmit={handleSubmit}>
+                        <input type="text" name="name" placeholder="Name" required/>
+                        <textarea
+                        id="description"
+                        placeholder="Comment"
+                        name="description"
+                        ></textarea>
+                        <input type="submit" />
+                    </form>
                 </div>
             </main>
           );
