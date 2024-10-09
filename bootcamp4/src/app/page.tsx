@@ -13,7 +13,7 @@ export default function Home() {
                   </div>
                   <div className={styles.about_text}>
                       <p>
-                          My name is <strong>Shawn Gill</strong>, and I am a third-year computer science student at the 
+                          My name is <strong>Shawn Gill</strong>, and I am a fourth-year computer science student at the 
                           <em> California Polytechnic State University, San Luis Obispo.</em> I created this website to 
                           showcase the HTML and CSS skills I have learned so far as well share a little about myself.</p>
                       <p> 
